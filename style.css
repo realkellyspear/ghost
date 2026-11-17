@@ -61,14 +61,15 @@ a:focus-visible { outline: 3px solid var(--bright); outline-offset: 4px; }
 .nav-links a, .footer-inner a { color: var(--muted); font: 700 .68rem/1.5 "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; }
 .nav-links a:hover, .nav-links a[aria-current="page"], .footer-inner a:hover { color: var(--bright); }
 .hero { padding: 70px 0 110px; }
-.suite-banner { display: block; max-width: 1100px; margin: 0 auto 60px; }
-.suite-banner img { display: block; width: 100%; height: auto; }
+.suite-banner { display: block; max-width: 800px; margin: 0 auto 40px; }
+.suite-banner img { display: block; width: 100%; max-width: 100%; height: auto; }
 .product-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, min(320px, 35%)); align-items: center; gap: 30px; padding: 105px 0 85px; }
 .product-copy { min-width: 0; }
-.product-art { display: block; width: 100%; height: auto; }
+.product-art { display: block; width: 100%; max-width: 320px; height: auto; }
 .kicker, .card-number { color: var(--bright); font: 700 .72rem/1.5 "JetBrains Mono", monospace; letter-spacing: .22em; text-transform: uppercase; }
 h1, h2, h3 { font-weight: 900; line-height: 1.08; }
 h1 { margin: 22px 0 28px; font-size: clamp(3.2rem, 9vw, 6.6rem); letter-spacing: -.035em; text-transform: uppercase; }
+.hero h1.kicker { margin: 0 0 20px; font: 700 .72rem/1.5 "JetBrains Mono", monospace; letter-spacing: .22em; }
 h1 span { color: var(--purple); text-shadow: 0 0 40px rgba(var(--glow), .35); }
 h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 15px 0; }
 .lede { max-width: 680px; color: #c8c8d1; font-size: clamp(1.15rem, 2vw, 1.35rem); }
@@ -85,7 +86,7 @@ h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 15px 0; }
 .section-heading > p { color: var(--muted); }
 .tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .tool-card { display: flex; flex-direction: column; padding: 32px; border: 1px solid var(--line); background: var(--panel); }
-.card-art { width: min(100%, 180px); height: auto; align-self: center; margin-bottom: 18px; }
+.card-art { display: block; width: 180px; max-width: 100%; height: auto; align-self: center; margin-bottom: 18px; }
 .tool-card h3 { margin: 20px 0 8px; font-size: 1.8rem; }
 .tool-card > p:not(.card-number) { color: #c8c8d1; }
 .text-link { margin-top: auto; padding-top: 20px; color: var(--bright); font: 700 .75rem/1.5 "JetBrains Mono", monospace; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
@@ -109,7 +110,7 @@ h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 15px 0; }
   .nav { align-items: flex-start; flex-direction: column; padding-block: 16px; }
   .nav-links { gap: 12px 18px; }
   .hero { padding: 40px 0 80px; }
-  .suite-banner { max-width: 430px; margin-bottom: 40px; }
+  .suite-banner { max-width: 320px; margin-bottom: 40px; }
   .product-hero { grid-template-columns: 1fr; padding: 70px 0; }
   .product-art { width: min(100%, 280px); justify-self: center; }
   .section-heading { align-items: flex-start; flex-direction: column; }
