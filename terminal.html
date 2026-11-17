@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Download GHoSt Terminal, a local GGUF model loader and desktop chat app for Windows.">
+  <title>GHoSt Terminal | GHoSt</title>
+  <link rel="icon" href="https://wildemindpress.com/favicon_new.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="index.html">G<span>Ho</span>St <span class="brand-divider">/</span> Wilde Mind Press</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="terminal.html" aria-current="page">Terminal</a>
+        <a href="ghostpcp.html">GHostPCP</a>
+        <a href="https://wildemindpress.com/">The Press ↗</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main" class="wrap">
+    <section class="product-hero">
+      <p class="kicker">// 01 / model + chat</p>
+      <h1>GHoSt <span>Terminal.</span></h1>
+      <p class="lede">Your local GGUF model loader and desktop chat app. Check the fit, mount a model, and make yourself at home.</p>
+      <div class="button-row">
+        <a class="button" href="https://github.com/realkellyspear/ghost-terminal/releases/download/v1.0.1/GHoSt-Terminal-v1.0.1-win64.zip">Download for Windows ↓</a>
+        <a class="button button-outline" href="https://github.com/realkellyspear/ghost-terminal/releases/latest">Latest release details ↗</a>
+      </div>
+      <p class="fine-print">Windows 64-bit · v1.0.1 · Bring your own GGUF model</p>
+    </section>
+    <section class="docs-section" aria-labelledby="docs-title">
+      <p class="kicker">// the field manual</p>
+      <h2 id="docs-title">Everything you need to get started.</h2>
+      <p class="docs-intro">The complete project README is reproduced below. For the latest updates, visit the <a href="https://github.com/realkellyspear/ghost-terminal">GHoSt Terminal repository</a>.</p>
+      <div class="readme">
+        <p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/realkellyspear/ghost-terminal/main/assets/ghost_wordmark.png"><img src="https://raw.githubusercontent.com/realkellyspear/ghost-terminal/main/assets/ghost_wordmark.png" alt="GHoSt Terminal - GPU Hosted Static Terminal" width="480" style="max-width: 100%;"></a>
+</p>
+<h1 dir="auto">GHoSt Terminal</h1>
+<p dir="auto"><strong>GHoSt Terminal</strong> (<strong>G</strong>PU <strong>Ho</strong>sted <strong>St</strong>atic <strong>Terminal</strong>) is a streamlined, fully local GGUF model loader and desktop chat app for Windows. Drop in a GGUF model, check how it fits your GPU, mount it, and chat. No cloud, no accounts, no telemetry.</p>
+<h2 dir="auto">See It in Action</h2>
+<p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/realkellyspear/ghost-terminal/main/assets/terminal-chat.png"><img src="https://raw.githubusercontent.com/realkellyspear/ghost-terminal/main/assets/terminal-chat.png" alt="GHoSt Terminal chat interface" width="48%" style="max-width: 100%;"></a>
+  <a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/realkellyspear/ghost-terminal/main/assets/chat_config.png"><img src="https://raw.githubusercontent.com/realkellyspear/ghost-terminal/main/assets/chat_config.png" alt="GHoSt Terminal CONFIG modal" width="48%" style="max-width: 100%;"></a>
+</p>
+<h2 dir="auto">Features</h2>
+<ul dir="auto">
+<li><strong>Desktop Window &amp; Local Loopback API</strong>: Opens in a native desktop window (pywebview + Microsoft Edge WebView2) backed by a local <code class="notranslate">llama.cpp</code> / FastAPI server bound strictly to <code class="notranslate">127.0.0.1</code> (auto-selects the first open port starting at <code class="notranslate">5555</code>, or override with <code class="notranslate">GHOST_API_PORT</code>).</li>
+<li><strong>Hardware-Aware VRAM Preflight (<code class="notranslate">CHECK FIT</code>)</strong>: Inspects GGUF tensor and architecture metadata alongside live <code class="notranslate">nvidia-smi</code> VRAM availability to pick a safe GPU layer count and KV-cache type (<code class="notranslate">F16</code> or <code class="notranslate">Q8_0</code>). Supports both standard transformers and hybrid SSM/DeltaNet + attention architectures (such as Qwen3.5 and Qwen3.6).</li>
+<li><strong>Flash Attention Toggle</strong>: Enabled by default in <strong>[ CONFIG ]</strong> for faster inference and to unlock <code class="notranslate">Q8_0</code> KV-cache compression when VRAM is tight (uncheck as a compatibility fallback to keep <code class="notranslate">F16</code> KV cache).</li>
+<li><strong>Full Sampler Controls</strong>: Temperature, Top P, Top K, Min P, Repetition Penalty, Presence Penalty, Seed, Maximum Response Tokens, Stop Sequences, Context Length, and Chat Template selection (<code class="notranslate">auto</code> or manual override).</li>
+<li><strong>Clean System Prompt</strong>: Left blank by default so your models behave cleanly out of the box, or enter your own system prompt when needed.</li>
+<li><strong>Chat Controls</strong>: Streaming responses with per-message <strong>Stop</strong>, <strong>Read aloud</strong> (speaker icon), <strong>Copy</strong>, <strong>Edit</strong>, <strong>Redo</strong>, and <strong>Delete</strong>.</li>
+<li><strong>Local Read-Aloud Voices</strong>: Powered by <a href="https://github.com/OHF-Voice/piper1-gpl">Piper</a>. Includes <strong>Silas</strong> and <strong>Kara</strong> out of the box (downloaded automatically from Hugging Face on first use, ~63 MB each, then cached offline in <code class="notranslate">piper_models/</code>). Drop any custom <code class="notranslate">.onnx</code> + <code class="notranslate">.onnx.json</code> pair into <code class="notranslate">piper_models/</code> to add more voices.</li>
+<li><strong>Optional Reasoning Disclosure</strong>: <code class="notranslate">&lt;think&gt;</code> reasoning blocks are suppressed/hidden by default (including Jinja <code class="notranslate">enable_thinking</code> models) and can be toggled on in <strong>[ CONFIG ]</strong> as collapsible disclosures beneath replies.</li>
+<li><strong>Persistent Settings</strong>: Saved locally in <code class="notranslate">ghost_terminal_settings.json</code> beside the executable.</li>
+</ul>
+<hr>
+<h2 dir="auto">Quick Start</h2>
+<h3 dir="auto">Option A: Download the Standalone Windows Release (Recommended)</h3>
+<ol dir="auto">
+<li>Download and extract <strong><code class="notranslate">GHoSt-Terminal-v1.0.1-win64.zip</code></strong> from Releases.</li>
+<li>Copy one or more <code class="notranslate">.gguf</code> model files into the extracted <code class="notranslate">ghost_models/</code> folder.</li>
+<li>Double-click <strong><code class="notranslate">GHoSt-Terminal.exe</code></strong>.</li>
+<li>In <strong>[ CONFIG ]</strong>, select your model, click <strong>CHECK FIT</strong> (optional) and <strong>MOUNT</strong>, then click <strong>CLOSE</strong> (or <strong>SAVE SETTINGS &amp; CLOSE</strong>) to start chatting.</li>
+</ol>
+<ul dir="auto">
+<li><strong>UNLOAD</strong> releases the resident model and frees VRAM while keeping your chat on screen.</li>
+<li><strong>NEW CHAT</strong> clears the transcript and resets the model's active KV/context state without unloading the model.</li>
+</ul>
+<h3 dir="auto">Option B: Run From Python Source</h3>
+<p dir="auto">Requires Python 3.11 on Windows (install CUDA-enabled <code class="notranslate">llama-cpp-python</code> + <code class="notranslate">nvidia-cublas</code> if using an NVIDIA GPU).</p>
+<div class="highlight highlight-source-powershell" dir="auto"><pre class="notranslate">python <span class="pl-k">-</span>m venv .venv
+.\.venv\Scripts\activate
+pip install <span class="pl-k">-</span>r requirements.txt
+python ghost_terminal.py</pre></div>
+<p dir="auto">To run only the local OpenAI-compatible API + web UI without opening the desktop window:</p>
+<div class="highlight highlight-source-powershell" dir="auto"><pre class="notranslate">python ghost_terminal.py <span class="pl-k">--</span>api<span class="pl-k">-</span>only</pre></div>
+<p dir="auto">Optional environment variables:</p>
+<ul dir="auto">
+<li><code class="notranslate">GHOST_API_PORT</code>: override the default port (<code class="notranslate">5555</code>, or next free port up to <code class="notranslate">5574</code>).</li>
+<li><code class="notranslate">GHOST_BACKEND</code>: force <code class="notranslate">auto</code> (default), <code class="notranslate">cuda</code>, <code class="notranslate">vulkan</code>, or <code class="notranslate">cpu</code>.</li>
+</ul>
+<hr>
+<h2 dir="auto">Build &amp; Package From Source</h2>
+<h3 dir="auto">Build <code class="notranslate">GHoSt-Terminal.exe</code></h3>
+<div class="highlight highlight-source-powershell" dir="auto"><pre class="notranslate">python build_terminal.py</pre></div>
+<p dir="auto"><code class="notranslate">build_terminal.py</code> automatically switches to <code class="notranslate">./.venv</code> if present and requires CUDA <code class="notranslate">llama-cpp-python</code> (<code class="notranslate">ggml-cuda.dll</code> + <code class="notranslate">cublas</code>) by default (pass <code class="notranslate">--cpu-only</code> if you intentionally want a CPU-only build). It outputs <code class="notranslate">GHoSt-Terminal.exe</code> and stages external backend DLLs into <code class="notranslate">backends/</code>.</p>
+<p dir="auto">Run the focused regression tests without loading a model:</p>
+<div class="highlight highlight-source-powershell" dir="auto"><pre class="notranslate">python <span class="pl-k">-</span>m unittest discover <span class="pl-k">-</span>s tests <span class="pl-k">-</span>v</pre></div>
+<h3 dir="auto">Create a Clean Distributable Release <code class="notranslate">.zip</code></h3>
+<div class="highlight highlight-source-powershell" dir="auto"><pre class="notranslate">python package_release.py</pre></div>
+<p dir="auto">This stages files in a temporary directory and writes <strong><code class="notranslate">../GHoSt-Terminal-v1.0.1-win64.zip</code></strong> containing:</p>
+<pre lang="text" class="notranslate"><code class="notranslate">GHoSt-Terminal/
+  GHoSt-Terminal.exe
+  README.md
+  LICENSE
+  THIRD_PARTY_NOTICES.md
+  assets/
+  backends/            cpu/ and cuda/ runtime DLLs
+  ghost_models/        drop your *.gguf files here
+  piper_models/        MODEL_CARDs + README (voices download on first use)
+  source/              complete first-party source code
+</code></pre>
+<p dir="auto">No <code class="notranslate">.gguf</code> model files, personal settings, or logs are included in the release archive.</p>
+<h3 dir="auto">Backend Packaging Status</h3>
+<p dir="auto">The builder externalizes the prebuilt DLLs from <code class="notranslate">llama-cpp-python</code> and <code class="notranslate">nvidia-cublas</code> into <code class="notranslate">backends/cpu</code> and <code class="notranslate">backends/cuda</code> rather than embedding the CUDA runtime inside the EXE. Verified on NVIDIA Windows hardware (RTX 5060 Ti); CPU-only machines without the linked CUDA/cuBLAS DLLs and Vulkan hardware are not yet certified.</p>
+<hr>
+<h2 dir="auto">Privacy</h2>
+<p dir="auto">The server binds to <code class="notranslate">127.0.0.1</code> only with zero telemetry. Nothing leaves your machine except the one-time download of a selected Piper voice from <code class="notranslate">rhasspy/piper-voices</code> on Hugging Face the first time you click the speaker button.</p>
+<p dir="auto">Browser requests from other origins are rejected. The local API is not authenticated, so other programs running on the same machine can still access it; only run trusted local software while it is active.</p>
+<h2 dir="auto">License</h2>
+<p dir="auto">GHoSt Terminal's first-party code is licensed under <strong>GPL-3.0-or-later</strong> — see <a href="https://github.com/realkellyspear/ghost-terminal/blob/main/LICENSE">LICENSE</a>. Third-party components and voice models retain their respective licenses — see <a href="https://github.com/realkellyspear/ghost-terminal/blob/main/THIRD_PARTY_NOTICES.md">THIRD_PARTY_NOTICES.md</a>.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>GHoSt <span class="accent">/</span> Built beyond the cloud.</span>
+      <div><a href="index.html">Home</a><a href="ghostpcp.html">GHostPCP</a><a href="https://wildemindpress.com/">Wilde Mind Press</a></div>
+    </div>
+  </footer>
+</body>
+</html>

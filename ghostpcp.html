@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Download GHostPCP, a local-first AI chat app grounded in your conversation archive.">
+  <title>GHostPCP | GHoSt</title>
+  <link rel="icon" href="https://wildemindpress.com/favicon_new.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="index.html">G<span>Ho</span>St <span class="brand-divider">/</span> Wilde Mind Press</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="terminal.html">Terminal</a>
+        <a href="ghostpcp.html" aria-current="page">GHostPCP</a>
+        <a href="https://wildemindpress.com/">The Press ↗</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main" class="wrap">
+    <section class="product-hero">
+      <p class="kicker">// 02 / archive + persona</p>
+      <h1>GHost<span>PCP.</span></h1>
+      <p class="lede">Bring your conversation history home. Import your archive, mount a local model, and chat with a persona grounded in your own history.</p>
+      <div class="button-row">
+        <a class="button" href="https://github.com/realkellyspear/GHostPCP/releases/download/v1.1.0/GHostPCP-v1.1.0-win64.zip">Download for Windows ↓</a>
+        <a class="button button-outline" href="https://github.com/realkellyspear/GHostPCP/releases/latest">Latest release details ↗</a>
+      </div>
+      <p class="fine-print">Windows 64-bit · v1.1.0 · Bring your own GGUF model</p>
+    </section>
+    <section class="docs-section" aria-labelledby="docs-title">
+      <p class="kicker">// the field manual</p>
+      <h2 id="docs-title">Everything you need to get started.</h2>
+      <p class="docs-intro">The complete project README is reproduced below. For the latest updates, visit the <a href="https://github.com/realkellyspear/GHostPCP">GHostPCP repository</a>.</p>
+      <div class="readme">
+        <p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/1github_banner.jpg"><img src="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/1github_banner.jpg" alt="GHostPCP — GPU Hosted Pure Concentrated Personality" style="max-width: 100%;"></a></p>
+<h1 dir="auto">GHostPCP</h1>
+<p dir="auto"><strong>GPU Hosted Pure Concentrated Personality</strong><br>
+<em>Break Your AI Out of the Cloud and Onto Your Own Hardware</em></p>
+<p dir="auto">GHostPCP is a local-first desktop and mobile-paired application for Windows. Import your ChatGPT export archive (<code class="notranslate">.zip</code> or <code class="notranslate">conversations.json</code>), along with <code class="notranslate">.pdf</code>, <code class="notranslate">.txt</code>, or <code class="notranslate">.md</code> documents, mount a local <code class="notranslate">.gguf</code> language model, and chat with a persona grounded in your conversation history.</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/ghost_pcp_first_screen.png"><img src="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/ghost_pcp_first_screen.png" alt="GHostPCP desktop interface" style="max-width: 100%;"></a></p>
+<hr>
+<h2 dir="auto">Why GHostPCP Exists</h2>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/why_gpcp.png"><img src="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/why_gpcp.png" alt="Why GHostPCP" style="max-width: 100%;"></a></p>
+<p dir="auto">Standard "chat with your docs" tools act like research librarians (<em>"According to source document 4..."</em>). GHostPCP prompts the model to treat your archive and attached files as the authoritative source for the persona's history and respond without citations. Like any language model, it can still make mistakes or invent details.</p>
+<ol dir="auto">
+<li><strong>Drop &amp; Forget Onboarding (With PDF &amp; Text Imports)</strong>: Drop your ChatGPT export <code class="notranslate">.zip</code>, <code class="notranslate">conversations.json</code>, <code class="notranslate">.pdf</code>, <code class="notranslate">.txt</code>, or <code class="notranslate">.md</code> files into <strong>[ ARCHIVE ]</strong>. In the background (with live progress, a safe <strong>CANCEL IMPORT</strong> button, and resumable indexing), GHostPCP unpacks conversations, strips out canned corporate refusals (<em>"As an AI language model..."</em>), organizes everything into clean Markdown volumes (<code class="notranslate">ghost_pcp_01.md</code>, <code class="notranslate">ghost_pcp_02.md</code>, ...), stamps uploaded document passages with title &amp; position headers (<code class="notranslate">Opening</code>, <code class="notranslate">Early</code>, <code class="notranslate">Middle</code>, <code class="notranslate">Late</code>, <code class="notranslate">Ending</code>), and builds a cached semantic vector index (<code class="notranslate">embeddings.npz</code>) using <code class="notranslate">BAAI/bge-small-en-v1.5</code>.</li>
+<li><strong>Hardware-Aware GGUF Workbench</strong>: Powered by <code class="notranslate">llama.cpp</code> with automatic NVIDIA VRAM preflight sizing (<code class="notranslate">Check Fit</code> / <code class="notranslate">Mount</code> / <code class="notranslate">Unload</code>), FP16/Q8_0 KV cache selection, live token streaming, a per-turn <strong>Stop</strong> control, and sampling controls.</li>
+<li><strong>In-Chat File Uploads, Persona Grounding &amp; Save &amp; Clear Continuity</strong>: Every turn retrieves the most relevant passages from your <code class="notranslate">ghost_pcp_*.md</code> volumes in ~24ms and grounds the model silently in character. Use <strong><code class="notranslate">[ + FILE ]</code></strong> right in the chat bar (desktop or phone) to attach <code class="notranslate">.pdf</code>, <code class="notranslate">.txt</code>, or <code class="notranslate">.md</code> files as collapsible attachment cards—with one-click <strong>SAVE TO DB</strong> (and automatic indexing for large documents). Click <strong>SAVE &amp; CLEAR</strong> at the top of the window to save the current chat thread with a timestamp directly into your PCP archive (<code class="notranslate">ghost_pcp_NN.md</code>), update the vector index in ~0.13s, and clear the window so the conversation continues without missing a beat.</li>
+<li><strong>Built-In Fast Local Read-Aloud Voices</strong>: Choose your preferred voice (such as <strong>Silas</strong> or <strong>Kara</strong>, or any <code class="notranslate">.onnx</code> voice dropped into <code class="notranslate">piper_models/</code>) in <strong>[ CONFIG ]</strong>, and click the speaker icon on any of the model's responses for instant local Piper ONNX synthesis (~0.17s latency) and seamless background playback via <code class="notranslate">sounddevice</code> on PC (or Web Audio when connected from your phone).</li>
+<li><strong>Use Anywhere (Wi-Fi, Tailscale, or One-Click HTTPS Tunnel)</strong>: Open <strong>[ PHONE / TUNNEL ]</strong> to scan a pairing QR code on your phone over local Wi-Fi, Tailscale, or a one-click Cloudflare HTTPS Quick Tunnel. Your phone gets the full interface—chat, attach files, listen to voice responses, start a new session, or switch models remotely.</li>
+</ol>
+<h2 dir="auto">See It in Action</h2>
+<p dir="auto"><strong>Desktop Workspace</strong></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/pcp_welcome.png"><img src="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/pcp_welcome.png" alt="GHostPCP desktop workspace" width="700" style="max-width: 100%;"></a></p>
+<p dir="auto"><strong>Archive Import &amp; Indexing</strong></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/ingest_screen.png"><img src="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/ingest_screen.png" alt="GHostPCP archive import and indexing" width="600" style="max-width: 100%;"></a></p>
+<p dir="auto"><strong>Phone &amp; Cloudflare Quick Tunnel</strong></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/cloudflare_page.png"><img src="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/cloudflare_page.png" alt="GHostPCP Cloudflare remote mobile connection" width="400" style="max-width: 100%;"></a> <a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/pcp_phone.png"><img src="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/pcp_phone.png" alt="GHostPCP mobile chat interface" width="260" style="max-width: 100%;"></a></p>
+<hr>
+<h2 dir="auto">Folder Layout</h2>
+<pre lang="text" class="notranslate"><code class="notranslate">GHostPCP/
+GHostPCP.exe                 Standalone desktop application (built locally)
+  ghost_pcp.py                 FastAPI + llama.cpp + PCP RAG server &amp; desktop host
+  pcp_ingest.py                ChatGPT export parser, corporate filter, &amp; volume writer
+  pcp_retrieval.py             Local BGE-small-en-v1.5 semantic indexer &amp; search engine
+  persona.py                   Universal citation-free grounding prompt &amp; filter defaults
+  ghost_pcp.html               Desktop &amp; mobile-responsive interface
+  build_pcp.py                 PyInstaller executable builder
+  ghost_models/                Place your local .gguf models here
+    README.md
+  piper_models/                Place local Piper TTS voice models here
+  pcp_data/                    Generated ghost_pcp_01.md..N volumes &amp; embeddings.npz (git-ignored)
+  assets/                      GHost circle logo and icons
+</code></pre>
+<hr>
+<h2 dir="auto">Quick Start</h2>
+<blockquote>
+<p dir="auto"><strong>Important:</strong> Imports append volumes by default. If you select <strong>Replace<br>
+existing archive volumes</strong>, the app backs up existing volumes to<br>
+<code class="notranslate">pcp_data/backups/</code> before replacing them. Keep your own backup of the entire<br>
+<code class="notranslate">pcp_data</code> folder, too. To keep fictional and personal memories separate,<br>
+try the sample in a separate, clean installation.</p>
+</blockquote>
+<h3 dir="auto">Option A: Download the Standalone Windows Release (Recommended)</h3>
+<ol dir="auto">
+<li>Download and extract <strong><a href="https://github.com/realkellyspear/GHostPCP/releases/latest"><code class="notranslate">GHostPCP-v1.1.0-win64.zip</code></a></strong> from Releases.</li>
+<li>Copy one or more <code class="notranslate">.gguf</code> models (for example, <code class="notranslate">Qwen3-14B-Q5_K_M.gguf</code>) into <code class="notranslate">ghost_models/</code>.</li>
+<li>Double-click <strong><code class="notranslate">GHostPCP.exe</code></strong>.</li>
+<li>Drop your ChatGPT export <code class="notranslate">.zip</code>, <code class="notranslate">conversations.json</code>, <code class="notranslate">.pdf</code>, <code class="notranslate">.txt</code>, or <code class="notranslate">.md</code> files (or the included <code class="notranslate">sample_chatgpt_export.zip</code>) into the <strong>Archive Import</strong> window.</li>
+<li>In <strong>[ CONFIG ]</strong>, select your model and click <strong>MOUNT</strong>.</li>
+<li><em>(Optional)</em> Click <strong>[ PHONE / TUNNEL ]</strong> and scan the QR code to pair your phone over Wi-Fi, Tailscale, or a 1-click Cloudflare HTTPS Quick Tunnel.</li>
+<li>Responses stream as they are generated. Click <strong>Stop</strong> on the active response to interrupt generation.</li>
+</ol>
+<h3 dir="auto">Option B: Run from Python Source</h3>
+<p dir="auto">Install Python and dependencies, and supply your own GGUF model. The first run may need an internet connection to download the embedding model; model weights and voice files (besides Silas voice and Kara voice) are not included.</p>
+<div class="highlight highlight-source-powershell" dir="auto"><pre class="notranslate">python <span class="pl-k">-</span>m venv .venv
+<span class="pl-k">&amp;</span> .\.venv\Scripts\<span class="pl-c1">python.exe</span> <span class="pl-k">-</span>m pip install <span class="pl-k">-</span>r requirements.txt
+<span class="pl-k">&amp;</span> .\.venv\Scripts\<span class="pl-c1">python.exe</span> ghost_pcp.py</pre></div>
+<p dir="auto">To run headless (API + Web UI without opening the desktop window):</p>
+<div class="highlight highlight-source-powershell" dir="auto"><pre class="notranslate"><span class="pl-k">&amp;</span> .\.venv\Scripts\<span class="pl-c1">python.exe</span> ghost_pcp.py <span class="pl-k">--</span>api<span class="pl-k">-</span>only</pre></div>
+<h3 dir="auto">Try the Fictional Sample</h3>
+<p dir="auto">Download <a href="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/examples/sample_chatgpt_export.zip"><code class="notranslate">sample_chatgpt_export.zip</code></a> and<br>
+import it into a clean installation using <strong>[ ARCHIVE ]</strong>. This small, fictional<br>
+ChatGPT-format export lets you try the workflow without using personal data.<br>
+After mounting a model, try asking:</p>
+<ul dir="auto">
+<li>"What is our callsign and the golden rule on the Station 9 observation deck?"</li>
+<li>"What happened during the Europa relay blackout?"</li>
+</ul>
+<p dir="auto">The sample is not a benchmark: responses can vary and may contain errors.<br>
+Later imports append to the sample unless you select <strong>Replace existing archive<br>
+volumes</strong>.</p>
+<hr>
+<h2 dir="auto">Building <code class="notranslate">GHostPCP.exe</code> from Source</h2>
+<div class="highlight highlight-source-powershell" dir="auto"><pre class="notranslate"><span class="pl-k">&amp;</span> .\.venv\Scripts\<span class="pl-c1">python.exe</span> build_pcp.py</pre></div>
+<hr>
+<h2 dir="auto">Privacy &amp; Security</h2>
+<ul dir="auto">
+<li>Your archive volumes (<code class="notranslate">pcp_data/ghost_pcp_*.md</code>), vector index (<code class="notranslate">embeddings.npz</code>), models (<code class="notranslate">*.gguf</code>), and settings (<code class="notranslate">ghost_pcp_settings.json</code>) are excluded by <code class="notranslate">.gitignore</code>. Check what you stage before committing; ignore rules are not a guarantee against uploading private data.</li>
+<li>Desktop loopback (<code class="notranslate">127.0.0.1</code>) works automatically. Any remote connection (LAN Wi-Fi, Tailscale, or Cloudflare Tunnel) is gated by a 192-bit cryptographic pairing token embedded in the QR code link (<code class="notranslate">/#&lt;token&gt;</code>). You can rotate the pairing code at any time in <strong>[ PHONE / TUNNEL ]</strong>.</li>
+<li>Same-Wi-Fi access uses unencrypted HTTP. Use a trusted network, keep the pairing link private, and rotate it if exposed. Cloudflare Tunnel is optional and uses an external service; model and dependency downloads also require internet access.</li>
+</ul>
+<h2 dir="auto">License</h2>
+<p dir="auto">GHostPCP's application code is licensed under the <strong>GNU General Public License<br>
+v3.0 or later</strong> (<code class="notranslate">GPL-3.0-or-later</code>). See <a href="https://github.com/realkellyspear/GHostPCP/blob/main/LICENSE">LICENSE</a>. The standalone<br>
+Windows release includes its first-party corresponding source in the <code class="notranslate">source/</code><br>
+directory, including the application, UI, and build scripts.</p>
+<p dir="auto">The release also bundles third-party components and models under their own<br>
+licenses; those retain their original terms. See<br>
+<a href="https://github.com/realkellyspear/GHostPCP/blob/main/THIRD_PARTY_NOTICES.md">THIRD_PARTY_NOTICES.md</a> for details.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>GHoSt <span class="accent">/</span> Built beyond the cloud.</span>
+      <div><a href="index.html">Home</a><a href="terminal.html">Terminal</a><a href="https://wildemindpress.com/">Wilde Mind Press</a></div>
+    </div>
+  </footer>
+</body>
+</html>
