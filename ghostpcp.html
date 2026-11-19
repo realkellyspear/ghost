@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Download GHostPCP, a local-first AI chat app grounded in your conversation archive.">
+  <meta name="description" content="Download GHostPCP: import ChatGPT and Gemini exports and chat with multiple locally grounded AI personas.">
   <title>GHostPCP | GHoSt</title>
   <link rel="icon" href="https://wildemindpress.com/favicon_new.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
       <div class="product-copy">
       <p class="kicker">// 02 / archive + persona</p>
       <h1>GHost<span>PCP.</span></h1>
-      <p class="lede">Bring your conversation history home. Import your archive, mount a local model, and chat with a persona grounded in your own history.</p>
+      <p class="lede">Bring your conversation history home. Import ChatGPT or Google Gemini exports, mount a local model, and chat with personas grounded in their own separate archives.</p>
       <div class="button-row">
         <a class="button" href="https://github.com/realkellyspear/GHostPCP/releases/download/v1.2.0/GHostPCP-v1.2.0-win64.zip">Download for Windows ↓</a>
         <a class="button button-outline" href="https://github.com/realkellyspear/GHostPCP/releases/latest">Latest release details ↗</a>
@@ -37,6 +37,19 @@
       <p class="fine-print">Windows 64-bit · v1.2.0 · Bring your own GGUF model</p>
       </div>
       <img class="product-art" src="assets/ghostpcp_vertical.png" width="320" height="320" alt="GHostPCP's purple ghost mascot and logo">
+    </section>
+    <section class="docs-section" aria-labelledby="release-title">
+      <p class="kicker">// release notes / v1.2.0</p>
+      <h2 id="release-title">More memories. More personas.</h2>
+      <div class="readme">
+        <ul>
+          <li><strong>Google Gemini support:</strong> Import Google Takeout <code>MyActivity.json</code>, <code>MyActivity.html</code>, a Takeout ZIP, or an extracted source folder alongside supported ChatGPT exports. The importer detects the source automatically and skips unrelated Google services when scanning folders.</li>
+          <li><strong>Separate persona archives:</strong> Create multiple saved personas, each with its own memory folder, index, backups, and saved conversations. Choose a persona at startup or switch from the header; new saved chats and documents go to the active persona.</li>
+          <li><strong>Guided onboarding:</strong> Create a persona or append to an existing one, then provide its name, what it calls you, important memories, and optional personality, voice, and protected words.</li>
+          <li><strong>Existing archives preserved:</strong> Existing volumes in <code>pcp_data/</code> are recognized as “Existing Archive” without re-indexing. Keep your own backup of the entire <code>pcp_data</code> folder before making changes.</li>
+        </ul>
+        <p><a href="https://github.com/realkellyspear/GHostPCP/releases/tag/v1.2.0">Read the full v1.2.0 release notes ↗</a></p>
+      </div>
     </section>
     <section class="docs-section" aria-labelledby="docs-title">
       <p class="kicker">// the field manual</p>
@@ -47,14 +60,14 @@
 <h1 dir="auto">GHostPCP</h1>
 <p dir="auto"><strong>GPU Hosted Pure Concentrated Personality</strong><br>
 <em>Break Your AI Out of the Cloud and Onto Your Own Hardware</em></p>
-<p dir="auto">GHostPCP is a local-first desktop and mobile-paired application for Windows. Import your ChatGPT export archive (<code class="notranslate">.zip</code> or <code class="notranslate">conversations.json</code>), along with <code class="notranslate">.pdf</code>, <code class="notranslate">.txt</code>, or <code class="notranslate">.md</code> documents, mount a local <code class="notranslate">.gguf</code> language model, and chat with a persona grounded in your conversation history.</p>
+<p dir="auto">GHostPCP is a local-first desktop and mobile-paired application for Windows. Import your OpenAI ChatGPT export (<code class="notranslate">.zip</code> or <code class="notranslate">conversations.json</code>) or Google Gemini Takeout export (<code class="notranslate">.zip</code>, <code class="notranslate">MyActivity.json</code>, <code class="notranslate">MyActivity.html</code>, or source folder), along with <code class="notranslate">.pdf</code>, <code class="notranslate">.txt</code>, or <code class="notranslate">.md</code> documents, save multiple isolated AI personas with their own folders, mount a local <code class="notranslate">.gguf</code> language model, and chat with a persona grounded in your conversation history.</p>
 <p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/ghost_pcp_first_screen.png"><img src="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/ghost_pcp_first_screen.png" alt="GHostPCP desktop interface" style="max-width: 100%;"></a></p>
 <hr>
 <h2 dir="auto">Why GHostPCP Exists</h2>
 <p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/why_gpcp.png"><img src="https://raw.githubusercontent.com/realkellyspear/GHostPCP/main/GHostPCP%20Promo/why_gpcp.png" alt="Why GHostPCP" style="max-width: 100%;"></a></p>
 <p dir="auto">Standard "chat with your docs" tools act like research librarians (<em>"According to source document 4..."</em>). GHostPCP prompts the model to treat your archive and attached files as the authoritative source for the persona's history and respond without citations. Like any language model, it can still make mistakes or invent details.</p>
 <ol dir="auto">
-<li><strong>Drop &amp; Forget Onboarding (With PDF &amp; Text Imports)</strong>: Drop your ChatGPT export <code class="notranslate">.zip</code>, <code class="notranslate">conversations.json</code>, <code class="notranslate">.pdf</code>, <code class="notranslate">.txt</code>, or <code class="notranslate">.md</code> files into <strong>[ ARCHIVE ]</strong>. In the background (with live progress, a safe <strong>CANCEL IMPORT</strong> button, and resumable indexing), GHostPCP unpacks conversations, strips out canned corporate refusals (<em>"As an AI language model..."</em>), organizes everything into clean Markdown volumes (<code class="notranslate">ghost_pcp_01.md</code>, <code class="notranslate">ghost_pcp_02.md</code>, ...), stamps uploaded document passages with title &amp; position headers (<code class="notranslate">Opening</code>, <code class="notranslate">Early</code>, <code class="notranslate">Middle</code>, <code class="notranslate">Late</code>, <code class="notranslate">Ending</code>), and builds a cached semantic vector index (<code class="notranslate">embeddings.npz</code>) using <code class="notranslate">BAAI/bge-small-en-v1.5</code>.</li>
+<li><strong>Drop &amp; Forget Onboarding (ChatGPT, Google Gemini, PDFs &amp; Multiple Personas)</strong>: Drop your ChatGPT export, Google Gemini Takeout (<code class="notranslate">MyActivity.json</code>, <code class="notranslate">MyActivity.html</code>, <code class="notranslate">.zip</code>, or source folder), <code class="notranslate">.pdf</code>, <code class="notranslate">.txt</code>, or <code class="notranslate">.md</code> files into <strong>[ ARCHIVE ]</strong> — GHostPCP auto-detects Google vs OpenAI, asks you who the AI is (name, what it calls you, core anchors it should never forget), creates an isolated folder per persona (<code class="notranslate">pcp_data/personas/&lt;id&gt;/</code>), strips out canned corporate refusals (<em>"As an AI language model..."</em>), organizes everything into clean Markdown volumes (<code class="notranslate">ghost_pcp_01.md</code>, <code class="notranslate">ghost_pcp_02.md</code>, ...), and builds a cached semantic vector index (<code class="notranslate">embeddings.npz</code>) using <code class="notranslate">BAAI/bge-small-en-v1.5</code>. Choose which AI you want to talk to on startup or switch anytime from the header.</li>
 <li><strong>Hardware-Aware GGUF Workbench</strong>: Powered by <code class="notranslate">llama.cpp</code> with automatic NVIDIA VRAM preflight sizing (<code class="notranslate">Check Fit</code> / <code class="notranslate">Mount</code> / <code class="notranslate">Unload</code>), FP16/Q8_0 KV cache selection, live token streaming, a per-turn <strong>Stop</strong> control, and sampling controls.</li>
 <li><strong>In-Chat File Uploads, Persona Grounding &amp; Save &amp; Clear Continuity</strong>: Every turn retrieves the most relevant passages from your <code class="notranslate">ghost_pcp_*.md</code> volumes in ~24ms and grounds the model silently in character. Use <strong><code class="notranslate">[ + FILE ]</code></strong> right in the chat bar (desktop or phone) to attach <code class="notranslate">.pdf</code>, <code class="notranslate">.txt</code>, or <code class="notranslate">.md</code> files as collapsible attachment cards—with one-click <strong>SAVE TO DB</strong> (and automatic indexing for large documents). Click <strong>SAVE &amp; CLEAR</strong> at the top of the window to save the current chat thread with a timestamp directly into your PCP archive (<code class="notranslate">ghost_pcp_NN.md</code>), update the vector index in ~0.13s, and clear the window so the conversation continues without missing a beat.</li>
 <li><strong>Built-In Fast Local Read-Aloud Voices</strong>: Choose your preferred voice (such as <strong>Silas</strong> or <strong>Kara</strong>, or any <code class="notranslate">.onnx</code> voice dropped into <code class="notranslate">piper_models/</code>) in <strong>[ CONFIG ]</strong>, and click the speaker icon on any of the model's responses for instant local Piper ONNX synthesis (~0.17s latency) and seamless background playback via <code class="notranslate">sounddevice</code> on PC (or Web Audio when connected from your phone).</li>
@@ -72,7 +85,7 @@
 <pre lang="text" class="notranslate"><code class="notranslate">GHostPCP/
 GHostPCP.exe                 Standalone desktop application (built locally)
   ghost_pcp.py                 FastAPI + llama.cpp + PCP RAG server &amp; desktop host
-  pcp_ingest.py                ChatGPT export parser, corporate filter, &amp; volume writer
+  pcp_ingest.py                Auto-detecting Google Gemini &amp; OpenAI ChatGPT parser, filter, &amp; volume writer
   pcp_retrieval.py             Local BGE-small-en-v1.5 semantic indexer &amp; search engine
   persona.py                   Universal citation-free grounding prompt &amp; filter defaults
   ghost_pcp.html               Desktop &amp; mobile-responsive interface
@@ -97,7 +110,7 @@ try the sample in a separate, clean installation.</p>
 <li>Download and extract <strong><a href="https://github.com/realkellyspear/GHostPCP/releases/latest"><code class="notranslate">GHostPCP-v1.2.0-win64.zip</code></a></strong> from Releases.</li>
 <li>Copy one or more <code class="notranslate">.gguf</code> models (for example, <code class="notranslate">Qwen3-14B-Q5_K_M.gguf</code>) into <code class="notranslate">ghost_models/</code>.</li>
 <li>Double-click <strong><code class="notranslate">GHostPCP.exe</code></strong>.</li>
-<li>Drop your ChatGPT export <code class="notranslate">.zip</code>, <code class="notranslate">conversations.json</code>, <code class="notranslate">.pdf</code>, <code class="notranslate">.txt</code>, or <code class="notranslate">.md</code> files (or the included <code class="notranslate">sample_chatgpt_export.zip</code>) into the <strong>Archive Import</strong> window.</li>
+<li>Drop your ChatGPT export (<code class="notranslate">.zip</code> or <code class="notranslate">conversations.json</code>), Google Gemini Takeout export (<code class="notranslate">.zip</code>, <code class="notranslate">MyActivity.json</code>, <code class="notranslate">MyActivity.html</code>, or source folder), <code class="notranslate">.pdf</code>, <code class="notranslate">.txt</code>, or <code class="notranslate">.md</code> files (or the included <code class="notranslate">sample_chatgpt_export.zip</code>) into the <strong>Archive Import</strong> window, and fill in your AI's name, what it calls you, and core memories it should never forget.</li>
 <li>In <strong>[ CONFIG ]</strong>, select your model and click <strong>MOUNT</strong>.</li>
 <li><em>(Optional)</em> Click <strong>[ PHONE / TUNNEL ]</strong> and scan the QR code to pair your phone over Wi-Fi, Tailscale, or a 1-click Cloudflare HTTPS Quick Tunnel.</li>
 <li>Responses stream as they are generated. Click <strong>Stop</strong> on the active response to interrupt generation.</li>
@@ -127,7 +140,7 @@ volumes</strong>.</p>
 <hr>
 <h2 dir="auto">Privacy &amp; Security</h2>
 <ul dir="auto">
-<li>Your archive volumes (<code class="notranslate">pcp_data/ghost_pcp_*.md</code>), vector index (<code class="notranslate">embeddings.npz</code>), models (<code class="notranslate">*.gguf</code>), and settings (<code class="notranslate">ghost_pcp_settings.json</code>) are excluded by <code class="notranslate">.gitignore</code>. Check what you stage before committing; ignore rules are not a guarantee against uploading private data.</li>
+<li>Your archive volumes (<code class="notranslate">pcp_data/ghost_pcp_*.md</code>, <code class="notranslate">pcp_data/personas/</code>), vector index (<code class="notranslate">embeddings.npz</code>), models (<code class="notranslate">*.gguf</code>), and settings (<code class="notranslate">ghost_pcp_settings.json</code>) are excluded by <code class="notranslate">.gitignore</code>. Check what you stage before committing; ignore rules are not a guarantee against uploading private data.</li>
 <li>Desktop loopback (<code class="notranslate">127.0.0.1</code>) works automatically. Any remote connection (LAN Wi-Fi, Tailscale, or Cloudflare Tunnel) is gated by a 192-bit cryptographic pairing token embedded in the QR code link (<code class="notranslate">/#&lt;token&gt;</code>). You can rotate the pairing code at any time in <strong>[ PHONE / TUNNEL ]</strong>.</li>
 <li>Same-Wi-Fi access uses unencrypted HTTP. Use a trusted network, keep the pairing link private, and rotate it if exposed. Cloudflare Tunnel is optional and uses an external service; model and dependency downloads also require internet access.</li>
 </ul>

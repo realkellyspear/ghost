@@ -4,8 +4,9 @@ The static website for [ghost.wildemindpress.com](https://ghost.wildemindpress.c
 `index.html` is the welcome page; `terminal.html` and `ghostpcp.html` contain
 the product pages. GitHub Pages publishes the root of the `main` branch.
 
-The product pages include snapshots of the respective project READMEs. When a
-project README or release changes, update the relevant page and download link;
+The product pages include release highlights and snapshots of the respective
+project READMEs. When a project README or release changes, update the relevant
+highlights, README snapshot, version label, and download and release-note links;
 the repository links on the pages always point to the current source.
 
 ## Artwork

@@ -29,7 +29,7 @@
       <div class="product-copy">
       <p class="kicker">// 01 / model + chat</p>
       <h1>GHoSt <span>Terminal.</span></h1>
-      <p class="lede">Your local GGUF model loader and desktop chat app. Check the fit, mount a model, and make yourself at home.</p>
+      <p class="lede">Your local GGUF model loader and desktop chat app, with hardware-aware fit checks, expanded context settings, and an OpenAI-compatible local API.</p>
       <div class="button-row">
         <a class="button" href="https://github.com/realkellyspear/ghost-terminal/releases/download/v1.0.2/GHoSt-Terminal-v1.0.2-win64.zip">Download for Windows ↓</a>
         <a class="button button-outline" href="https://github.com/realkellyspear/ghost-terminal/releases/latest">Latest release details ↗</a>
@@ -37,6 +37,20 @@
       <p class="fine-print">Windows 64-bit · v1.0.2 · Bring your own GGUF model</p>
       </div>
       <img class="product-art" src="assets/ghostterm_vertical.png" width="320" height="320" alt="GHoSt Terminal's cyan ghost mascot and logo">
+    </section>
+    <section class="docs-section" aria-labelledby="release-title">
+      <p class="kicker">// release notes / v1.0.2</p>
+      <h2 id="release-title">More room to think.</h2>
+      <div class="readme">
+        <ul>
+          <li><strong>Expanded context:</strong> Set context lengths from 512 to 262,144 tokens, including custom values. Usable context depends on your model and hardware.</li>
+          <li><strong>More response tokens and agent support:</strong> The CONFIG response limit is now 32,768 tokens. The local OpenAI-compatible API accepts <code>max_tokens</code> up to 262,144 and supports <code>max_completion_tokens</code>.</li>
+          <li><strong>Smarter CHECK FIT:</strong> See the context length declared by your GGUF model and get a warning when your requested context exceeds it.</li>
+          <li><strong>Clearer errors:</strong> Validation errors now show readable field messages in the interface.</li>
+        </ul>
+        <p>For local clients and agents, the API normally starts at <code>http://127.0.0.1:5555/v1</code>; the port can change or be configured. It is not authenticated, so run only trusted local software while it is active.</p>
+        <p><a href="https://github.com/realkellyspear/ghost-terminal/releases/tag/v1.0.2">Read the full v1.0.2 release notes ↗</a></p>
+      </div>
     </section>
     <section class="docs-section" aria-labelledby="docs-title">
       <p class="kicker">// the field manual</p>
